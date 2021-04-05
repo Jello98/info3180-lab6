@@ -29,7 +29,7 @@ const NewsList= {
 
 {
   headers:{
-    'Authorization': 'Bearer ad5f42f8a1934c2dacd941d22141972a'
+    'Authorization': 'Bearer  <your-api-token> '
   }
 })
       .then(function(response) { 
