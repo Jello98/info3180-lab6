@@ -1,43 +1,4 @@
 /* Add your Application JavaScript */
-const app = Vue.createApp({
-  data() {
-    return {
-      welcome: 'Hello World! Welcome to VueJS'
-    }
-  }
-  components: {
-    'home': Home,
-    'news-list':NewsList
-  }
-});
-
-app.component('app-header', {
-  name: 'AppHeader',
-  template: `
-      <header>
-          <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
-            <a class="navbar-brand" href="#">VueJS App</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                  <router-link to="/" class="nav-link">Home</router-link>
-                </li>
-                <li class="nav-item">
-                  <router-link to="/news" class="nav-link">News</router-link>
-                </li>
-              </ul>
-            </div>
-          </nav>
-      </header>    
-  `,
-  data: function() {
-    return {};
-  }
-});
 
 const NewsList= {
   name: 'NewsList',
@@ -127,6 +88,44 @@ const router = VueRouter.createRouter({
       { path: '/', component: Home },
       { path: '/news', component: NewsList }
   ]
+});
+
+
+
+const app = Vue.createApp({
+
+  components: {
+    'home': Home,
+    'news-list':NewsList
+  }
+});
+
+app.component('app-header', {
+  name: 'AppHeader',
+  template: `
+      <header>
+          <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+            <a class="navbar-brand" href="#">VueJS App</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                  <router-link to="/" class="nav-link">Home</router-link>
+                </li>
+                <li class="nav-item">
+                  <router-link to="/news" class="nav-link">News</router-link>
+                </li>
+              </ul>
+            </div>
+          </nav>
+      </header>    
+  `,
+  data: function() {
+    return {};
+  }
 });
 
 
